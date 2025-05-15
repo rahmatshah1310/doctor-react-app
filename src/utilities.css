@@ -1,0 +1,24 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+@layer base {
+    body{
+    font-family: Robot;
+}
+  .font-roboto {
+    font-family: 'Roboto', sans-serif;
+  }
+}
+
+:root {
+  --whatsapp-green: #25d366;
+  --whatsapp-green-dark: #1ebe57;
+  --primary-color: #007BFF;
+  --maroon-color: #800000;
+  --light-blue: #ebf8ff;
+  --medium-blue: #bfdbfe;
+  --dark-blue: #2563eb;
+  --gray-text: #4b5563;
+  --black-text: #000000;
+  --white-text: #ffffff;
+}
