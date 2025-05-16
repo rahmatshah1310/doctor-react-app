@@ -1,139 +1,22 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { fadeInUp, fadeInLeft, fadeInRight, staggerContainer, itemVariants } from "@utils/animationVariants";
 import Navbar from "@components/layout/Navbar";
 import TopNavbar from "@components/layout/TopNavbar";
 import Profile from "@assets/images/Profile.png";
 import { services } from "@constants/constant";
-import ServiceCard from "@components/ServiceCard";
 import InputField from "@components/commons/InputField";
 import Button from "@components/commons/Button";
 import AntdSelect from "@components/commons/AntdSelect";
-import { serviceOptions } from "@constants/constant";
 import { ICONS } from "@constants/Icons";
 import AntdDatePicker from "@components/commons/AntdDatePicker";
-import RevealOnScroll from "../components/RevealOnScroll";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import hospital from "@assets/images/hospital.jpg";
 import "swiper/css";
 import "swiper/css/pagination";
-
-import { Carousel } from "antd";
 import SwiperComponent from "@components/SwiperComponent";
-import { BookingContent } from "@constants/constant";
-
-// Add these animation variants at the top of the file, after imports
-const fadeInUp = {
-  hidden: { opacity: 0, y: 60 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.6,
-      ease: "easeOut"
-    }
-  }
-};
-
-const fadeInLeft = {
-  hidden: { opacity: 0, x: -60 },
-  visible: {
-    opacity: 1,
-    x: 0,
-    transition: {
-      duration: 0.6,
-      ease: "easeOut"
-    }
-  }
-};
-
-const fadeInRight = {
-  hidden: { opacity: 0, x: 60 },
-  visible: {
-    opacity: 1,
-    x: 0,
-    transition: {
-      duration: 0.6,
-      ease: "easeOut"
-    }
-  }
-};
-
-const staggerContainer = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.1
-    }
-  }
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.5
-    }
-  }
-};
-
-// Add this constant for form fields
-const appointmentFields = [
-  {
-    name: "fullName",
-    label: "YOUR FULL NAME",
-    type: "text",
-    placeholder: "Your Full Name"
-  },
-  {
-    name: "email",
-    label: "EMAIL ADDRESS",
-    type: "email",
-    placeholder: "Email"
-  },
-  {
-    name: "phone",
-    label: "PHONE NUMBER",
-    type: "text",
-    placeholder: "Your Phone Number"
-  },
-  {
-    name: "appointmentDate",
-    label: "APPOINTMENT DATE",
-    type: "text",
-    placeholder: "Appointment Date"
-  },
-  {
-    name: "appointmentTime",
-    label: "APPOINTMENT TIME",
-    type: "text",
-    placeholder: "Appointment Time"
-  }
-];
-
-// Add this constant for slides
-const homeSlides = [
-  {
-    id: 1,
-    title: "YOUR MENTAL WELLNESS IS OUR PRIORITY",
-    highlight: "PRIORITY",
-    type: "title"
-  },
-  {
-    id: 2,
-    content: "Professional support for your mental health journey",
-    type: "content"
-  },
-  {
-    id: 3,
-    title: "YOUR MENTAL WELLNESS IS OUR PRIORITY",
-    highlight: "PRIORITY",
-    type: "search"
-  }
-];
+import { BookingContent,AppointmentFields,HomeSlides,serviceOptions } from "@constants/constant";
 
 const LandingPage = () => {
   return (
@@ -150,7 +33,6 @@ const LandingPage = () => {
 
       {/* Home Section */}
       <section id="home" className="w-full h-screen bg-black">
-        <RevealOnScroll>
           <Swiper
             modules={[Autoplay, Pagination]}
             autoplay={{ delay: 3000 }}
@@ -158,7 +40,7 @@ const LandingPage = () => {
             loop={true}
             className="w-full h-full"
           >
-            {homeSlides.map((slide) => (
+            {HomeSlides.map((slide) => (
               <SwiperSlide key={slide.id}>
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
@@ -226,11 +108,10 @@ const LandingPage = () => {
               </SwiperSlide>
             ))}
           </Swiper>
-        </RevealOnScroll>
       </section>
 
-      {/* Call to Action */}
-      <section className="bg-gray-50 w-full text-white">
+      {/* Services Section */}
+      <section id="services" className="bg-gray-50 w-full text-white">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -241,18 +122,18 @@ const LandingPage = () => {
             {/* Appointment Form Section */}
             <div className="w-full px-4 mb-8 lg:mb-0 bg-[var(--light-green)]">
               <div className="p-8 w-full md:w-[70%] ml-auto">
-                <motion.h2 
-                  className="text-3xl font-bold text-[var(--white-text)] mb-8"
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                >
-                  Make An Appointment
-                </motion.h2>
+                  <motion.h2 
+                    className="text-3xl font-bold text-[var(--white-text)] mb-8"
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                  >
+                    Make An Appointment
+                  </motion.h2>
 
                 <form className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    {appointmentFields.map((field, index) => (
+                    {AppointmentFields.map((field, index) => (
                       <motion.div 
                         key={field.name}
                         className="custom-ant-input"
@@ -332,13 +213,13 @@ const LandingPage = () => {
                   variants={itemVariants}
                   className="text-2xl mb-2 text-[#00BCD4] font-bold"
                 >
-                  LEARN ANYTHING
+                 OUR SERVICES
                 </motion.h3>
                 <motion.h4 
                   variants={itemVariants}
-                  className="mb-8 text-[var(--black-text)] font-medium text-2xl sm:text-3xl md:text-4xl"
+                  className="mb-8 text-[var(--black-text)] font-medium text-2xl sm:text-3xl md:text-4xl "
                 >
-                  We Offer Best Dental Services
+                What We Offer?
                 </motion.h4>
 
                 <motion.div variants={staggerContainer}>
@@ -499,7 +380,7 @@ const LandingPage = () => {
         href="https://wa.me/03239199788"
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed bottom-6 right-6 text-[var(--whatsapp-green)] p-4 z-50"
+        className="fixed bottom-6 right-6 rounded-full bg-[var(--whatsapp-green)] p-4 z-50"
         aria-label="Chat on WhatsApp"
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}

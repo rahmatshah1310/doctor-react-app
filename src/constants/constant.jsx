@@ -28,24 +28,81 @@ export const services = [
 ];
 
 
-export const BookingContent=[
-  
-    {
-      title: "Easy Booking",
-      content:
-        "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.",
-    },
-    {
-      title: "Team Dentist",
-      content:
-        "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.",
-    },
-    {
-      title: "Best Price Guarantee",
-      content:
-        "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.",
-    },
-  ]
+export const BookingContent = [
+  {
+    title: "ECG (Electrocardiogram)",
+    content:
+      "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.",
+  },
+  {
+    title: "EEG (Electroencephalogram)",
+    content:
+      "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.",
+  },
+  {
+    title: "Outdoor/Indoor Services",
+    content:
+      "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.",
+  },
+];
+
+
+
+
+// Add this constant for form fields
+export const AppointmentFields = [
+  {
+    name: "fullName",
+    label: "YOUR FULL NAME",
+    type: "text",
+    placeholder: "Your Full Name"
+  },
+  {
+    name: "email",
+    label: "EMAIL ADDRESS",
+    type: "email",
+    placeholder: "Email"
+  },
+  {
+    name: "phone",
+    label: "PHONE NUMBER",
+    type: "text",
+    placeholder: "Your Phone Number"
+  },
+  {
+    name: "appointmentDate",
+    label: "APPOINTMENT DATE",
+    type: "text",
+    placeholder: "Appointment Date"
+  },
+  {
+    name: "appointmentTime",
+    label: "APPOINTMENT TIME",
+    type: "text",
+    placeholder: "Appointment Time"
+  }
+];
+
+// Add this constant for slides
+export const HomeSlides = [
+  {
+    id: 1,
+    title: "YOUR MENTAL WELLNESS IS OUR PRIORITY",
+    highlight: "PRIORITY",
+    type: "title"
+  },
+  {
+    id: 2,
+    content: "Professional support for your mental health journey",
+    type: "content"
+  },
+  {
+    id: 3,
+    title: "YOUR MENTAL WELLNESS IS OUR PRIORITY",
+    highlight: "PRIORITY",
+    type: "search"
+  }
+];
 
 export const serviceOptions = [
   { label: "Dr. Sarah Thompson – CBT", value: "cbt" },
