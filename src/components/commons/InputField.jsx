@@ -27,7 +27,7 @@ const InputField = ({
         type={type}
         value={value}
         onChange={onChange}
-        className={`!p-3 ${className}`}
+        className={`!p-4 ${className}`}
         placeholder={placeholder}
         {...rest}
       />

@@ -9,6 +9,7 @@ const AntdDatePicker = ({ onChange, format = "YYYY-MM-DD" }) => {
       <DatePicker
         onChange={onChange}
         format={format}
+        suffixIcon={null} 
         className="!w-full !border !border-[var(--gray-text)] !rounded !p-2 hover:!border-[var(--primary-color)] focus:!border-[var(--primary-color)]"
         popupClassName="font-roboto"
       />

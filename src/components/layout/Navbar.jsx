@@ -1,13 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
+import Logo from "@assets/images/logo.jpg";
+import { FaBars, FaTimes } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
-    <nav className="fixed top-9 left-0 w-full bg-[var(--white-text)] shadow-md z-10">
-      <div className="max-w-7xl mx-auto flex justify-between items-center px-4 py-3">
+    <nav className="fixed top-7  left-0 w-full bg-[var(--light-green)] shadow-md z-10">
+      <div className="max-w-7xl mx-auto flex justify-between items-center px-4 py-2">
         <div className="text-xl font-bold text-[var(--primary-color)]">
-          DentaCare
+          <Link to="/">
+            <img
+              src={Logo}
+              alt="logo"
+              className="w-30 left-10 h-20 md:w-44 md:h-24 sm:w-12 sm:h-12  fixed top-0 md:left-18 z-50"
+            />
+          </Link>
         </div>
-        <div className="space-x-6">
+        <div className="space-x-6 hidden xl:flex">
           <a
             href="#home"
             className="text-[var(--gray-text)] hover:text-[var(--primary-color)] transition-colors duration-300"
@@ -27,6 +38,38 @@ const Navbar = () => {
             Contact
           </a>
         </div>
+        <button
+          className="xl:hidden text-2xl text-[var(--white-text)] focus:outline-none z-20 sm:pr-6"
+          onClick={() => setMenuOpen((prev) => !prev)}
+          aria-label="Toggle menu"
+        >
+          {menuOpen ? <FaTimes /> : <FaBars />}
+        </button>
+        {menuOpen && (
+          <div className="fixed w-full top-17 bg-[var(--light-green)] left-0 right-0 text-[var(--white-text)] shadow-lg flex flex-col items-center p-6 gap-4 xl:hidden animate-fade-in z-30">
+            <a
+              href="#home"
+              className="hover:text-[var(--primary-color)] text-lg font-semibold"
+              onClick={() => setMenuOpen(false)}
+            >
+              Home
+            </a>
+            <a
+              href="#about"
+              className="hover:text-[var(--primary-color)] text-lg font-semibold"
+              onClick={() => setMenuOpen(false)}
+            >
+              About Us
+            </a>
+            <a
+              href="#contact"
+              className="hover:text-[var(--primary-color)] text-lg font-semibold"
+              onClick={() => setMenuOpen(false)}
+            >
+              Contact
+            </a>
+          </div>
+        )}
       </div>
     </nav>
   );

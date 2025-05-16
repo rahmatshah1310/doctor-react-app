@@ -3,16 +3,45 @@
 
 @layer base {
     body{
-    font-family: Robot;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Robot;
 }
   .font-roboto {
     font-family: 'Roboto', sans-serif;
   }
+  .custom-ant-input .ant-input-outlined {
+    background-color: transparent;
+    border-right: 0px !important;
+    border-left:0px !important;
+    border-top: 0px !important;
+    border-bottom: 1px solid white;
+    border-radius: 0px !important;
+    box-shadow: none !important;
+    outline: none !important;
+  }
+
+  .custom-ant-input .ant-input-outlined:focus {
+    border-color: white;
+    box-shadow: none;
+  }
 }
 
+/* :where(.css-dev-only-do-not-override-1m2bkf9).ant-input-outlined{
+  background-color: transparent;
+  border-right: 0px;
+  border-top: 0px;
+  border-left: 0px;
+  border-bottom: 1px solid white;
+  border-radius: 0px;
+} */
 :root {
   --whatsapp-green: #25d366;
+  --light-white:#F8F8F8;
+  --bs-light: #f8f9fa;
   --whatsapp-green-dark: #1ebe57;
+  --light-green:#00BCD4;
   --primary-color: #007BFF;
   --maroon-color: #800000;
   --light-blue: #ebf8ff;
@@ -21,4 +50,5 @@
   --gray-text: #4b5563;
   --black-text: #000000;
   --white-text: #ffffff;
+  
 }

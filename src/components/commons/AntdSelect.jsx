@@ -7,7 +7,7 @@ const AntdSelect = (props) => {
       value={props.value}
       onChange={props.onChange}
       placeholder="Select a service"
-      className={`!h-12 ${props.className}`}
+      className={`!h-12 bg-transparent ${props.className}`}
       style={{ width: 200 }}
     >
       {props.options.map((option) => (
