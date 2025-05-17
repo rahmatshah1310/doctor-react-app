@@ -8,8 +8,8 @@ const Navbar = () => {
 
   return (
     <nav className="fixed top-7  left-0 w-full bg-[var(--light-green)] shadow-md z-10">
-      <div className="max-w-7xl mx-auto flex justify-between items-center px-4 py-2">
-        <div className="text-base font-bold text-[var(--primary-color)]">
+      <div className="max-w-[100rem] mx-auto flex justify-between items-center px-4 py-2">
+        <div className="text-[var(--primary-color)]">
           <Link to="/">
             <img
               src={Logo}
@@ -18,7 +18,7 @@ const Navbar = () => {
             />
           </Link>
         </div>
-        <div className="space-x-12  hidden xl:flex">
+        <div className="space-x-12  hidden xl:flex text-[12px] font-medium ">
           <a
             href="#home"
             className="text-[var(--white-text)] hover:text-[var(--gray-text)]  transition-colors duration-300"
@@ -29,7 +29,7 @@ const Navbar = () => {
             href="#services"
             className="text-[var(--white-text)] hover:text-[var(--gray-text)]  transition-colors duration-300"
           >
-           Services
+            Services
           </a>
           <a
             href="#about"
@@ -37,12 +37,24 @@ const Navbar = () => {
           >
             About Us
           </a>
-        
+
           <a
             href="#contact"
             className="text-[var(--white-text)] hover:text-[var(--gray-text)] transition-colors duration-300"
           >
             Contact
+          </a>
+          <a
+            href="#events"
+            className="text-[var(--white-text)] hover:text-[var(--gray-text)] transition-colors duration-300"
+          >
+            Events
+          </a>
+          <a
+            href="#news"
+            className="text-[var(--white-text)] hover:text-[var(--gray-text)] transition-colors duration-300"
+          >
+            News
           </a>
         </div>
         <button
@@ -74,6 +86,18 @@ const Navbar = () => {
               onClick={() => setMenuOpen(false)}
             >
               Contact
+            </a>
+            <a
+              href="#events"
+              className="text-[var(--white-text)] hover:text-[var(--gray-text)] transition-colors duration-300"
+            >
+              Events
+            </a>
+            <a
+              href="#news"
+              className="text-[var(--white-text)] hover:text-[var(--gray-text)] transition-colors duration-300"
+            >
+              News
             </a>
           </div>
         )}

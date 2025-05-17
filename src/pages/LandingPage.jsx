@@ -1,6 +1,12 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { fadeInUp, fadeInLeft, fadeInRight, staggerContainer, itemVariants } from "@utils/animationVariants";
+import {
+  fadeInUp,
+  fadeInLeft,
+  fadeInRight,
+  staggerContainer,
+  itemVariants,
+} from "@utils/animationVariants";
 import Navbar from "@components/layout/Navbar";
 import TopNavbar from "@components/layout/TopNavbar";
 import Profile from "@assets/images/Profile.png";
@@ -12,15 +18,20 @@ import { ICONS } from "@constants/Icons";
 import AntdDatePicker from "@components/commons/AntdDatePicker";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
-import hospital from "@assets/images/hospital.jpg";
 import "swiper/css";
 import "swiper/css/pagination";
 import SwiperComponent from "@components/SwiperComponent";
-import { BookingContent,AppointmentFields,HomeSlides,serviceOptions } from "@constants/constant";
+import {
+  BookingContent,
+  AppointmentFields,
+  HomeSlides,
+  serviceOptions,
+} from "@constants/constant";
 
 const LandingPage = () => {
+  console.log(HomeSlides, "homeslides..............");
   return (
-    <motion.div 
+    <motion.div
       className="font-roboto"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
@@ -32,82 +43,30 @@ const LandingPage = () => {
       <Navbar />
 
       {/* Home Section */}
-      <section id="home" className="w-full h-screen bg-black">
-          <Swiper
-            modules={[Autoplay, Pagination]}
-            autoplay={{ delay: 3000 }}
-            pagination={{ clickable: true }}
-            loop={true}
-            className="w-full h-full"
-          >
-            {HomeSlides.map((slide) => (
-              <SwiperSlide key={slide.id}>
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5 }}
-                  className="w-full h-screen bg-cover bg-center flex items-center justify-center"
-                  style={{
-                    backgroundImage: `url(${hospital})`,
-                    backgroundRepeat: "no-repeat",
-                    backgroundSize: "cover",
-                  }}
-                >
-                  <div className="bg-opacity-40 w-full max-w-4xl p-6 rounded-lg mx-4">
-                    {slide.type === "title" && (
-                      <motion.h1 
-                        className="text-4xl md:text-5xl font-bold text-[var(--white-text)]"
-                        initial={{ opacity: 0, x: -50 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: 0.2 }}
-                      >
-                        {slide.title.split(" ").map((word, index) => (
-                          word === slide.highlight ? (
-                            <span key={index} className="text-[var(--maroon-color)]">{word} </span>
-                          ) : (
-                            <span key={index}>{word} </span>
-                          )
-                        ))}
-                      </motion.h1>
-                    )}
-                    {slide.type === "content" && (
-                      <motion.p 
-                        className="text-[var(--white-text)] text-xl"
-                        initial={{ opacity: 0, scale: 0.8 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ delay: 0.3 }}
-                      >
-                        {slide.content}
-                      </motion.p>
-                    )}
-                    {slide.type === "search" && (
-                      <motion.div 
-                        className="flex justify-start my-2 flex-col gap-2 md:gap-0"
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.4 }}
-                      >
-                        <h1 className="text-4xl md:text-5xl font-bold text-[var(--white-text)]">
-                          YOUR MENTAL WELLNESS IS OUR{" "}
-                          <span className="text-[var(--maroon-color)]">
-                            PRIORITY
-                          </span>
-                        </h1>
-                        <InputField
-                          type="text"
-                          placeholder="Search for mental health services"
-                          className="p-4 rounded-l-md w-[30%]"
-                        />
-                        <Button className="bg-[var(--primary-color)] text-[var(--white-text)] px-4 py-4 w-[30%] my-2 rounded-r-md hover:bg-[var(--dark-blue)]">
-                          Search
-                        </Button>
-                      </motion.div>
-                    )}
-                  </div>
-                </motion.div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
+      <section id="home" className="w-full h-[80vh]">
+        <Swiper
+          modules={[Autoplay, Pagination]}
+          autoplay={{ delay: 3000 }}
+          pagination={{ clickable: true }}
+          loop={true}
+          className="w-full h-full"
+        >
+          {HomeSlides.map((slide) => (
+            <SwiperSlide key={slide.id}>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                className="w-full h-screen bg-cover bg-center flex items-center justify-center"
+                style={{
+                  backgroundImage: `url(${slide.backgroundImage})`,
+                  backgroundRepeat: "no-repeat",
+                  backgroundSize: "cover",
+                }}
+              ></motion.div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </section>
 
       {/* Services Section */}
@@ -122,19 +81,19 @@ const LandingPage = () => {
             {/* Appointment Form Section */}
             <div className="w-full px-4 mb-8 lg:mb-0 bg-[var(--light-green)]">
               <div className="p-8 w-full md:w-[70%] ml-auto">
-                  <motion.h2 
-                    className="text-3xl font-bold text-[var(--white-text)] mb-8"
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                  >
-                    Make An Appointment
-                  </motion.h2>
+                <motion.h2
+                  className="text-3xl font-bold text-[var(--white-text)] mb-8"
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                >
+                  Make An Appointment
+                </motion.h2>
 
                 <form className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     {AppointmentFields.map((field, index) => (
-                      <motion.div 
+                      <motion.div
                         key={field.name}
                         className="custom-ant-input"
                         initial={{ opacity: 0, y: 20 }}
@@ -152,7 +111,7 @@ const LandingPage = () => {
                         />
                       </motion.div>
                     ))}
-                    
+
                     {/* Doctor Selection */}
                     <motion.div
                       initial={{ opacity: 0, y: 20 }}
@@ -202,24 +161,24 @@ const LandingPage = () => {
 
             {/* Services Section */}
             <div className="w-full">
-              <motion.div 
+              <motion.div
                 className="bg-[var(--light-white)] p-8 text-white h-full"
                 variants={fadeInRight}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, margin: "-100px" }}
               >
-                <motion.h3 
+                <motion.h3
                   variants={itemVariants}
                   className="text-2xl mb-2 text-[#00BCD4] font-bold"
                 >
-                 OUR SERVICES
+                  OUR SERVICES
                 </motion.h3>
-                <motion.h4 
+                <motion.h4
                   variants={itemVariants}
                   className="mb-8 text-[var(--black-text)] font-medium text-2xl sm:text-3xl md:text-4xl "
                 >
-                What We Offer?
+                  What We Offer?
                 </motion.h4>
 
                 <motion.div variants={staggerContainer}>
@@ -255,23 +214,23 @@ const LandingPage = () => {
           viewport={{ once: true, margin: "-100px" }}
           className="max-w-6xl mx-auto px-4"
         >
-          <motion.h2 
+          <motion.h2
             variants={itemVariants}
             className="text-3xl font-bold text-center mb-12 text-[var(--black-text)]"
           >
             About Us
           </motion.h2>
-          <motion.p 
+          <motion.p
             variants={itemVariants}
             className="text-center max-w-3xl mx-auto text-[var(--gray-text)] mb-12"
           >
             At MindCare Clinic, we specialize in providing compassionate,
             evidence-based psychological care. Our team of licensed
             psychiatrists and therapists help individuals navigate depression,
-            anxiety, trauma, and other mental health challenges with empathy
-            and expertise.
+            anxiety, trauma, and other mental health challenges with empathy and
+            expertise.
           </motion.p>
-          <motion.div 
+          <motion.div
             variants={itemVariants}
             whileHover={{ scale: 1.02 }}
             transition={{ duration: 0.3 }}
@@ -301,46 +260,44 @@ const LandingPage = () => {
           viewport={{ once: true, margin: "-100px" }}
           className="max-w-6xl mx-auto px-4"
         >
-          <motion.h2 
+          <motion.h2
             variants={itemVariants}
             className="text-3xl font-bold text-center mb-12 text-[var(--black-text)]"
           >
             Contact Us
           </motion.h2>
-          <motion.div 
+          <motion.div
             variants={staggerContainer}
             className="grid md:grid-cols-2 gap-8"
           >
             <motion.div variants={fadeInLeft}>
-              <motion.h3 
+              <motion.h3
                 variants={itemVariants}
                 className="text-xl font-semibold mb-4 text-[var(--primary-color)]"
               >
                 Reach Out Today
               </motion.h3>
-              <motion.p 
+              <motion.p
                 variants={itemVariants}
                 className="text-[var(--gray-text)] mb-2"
               >
-                Address: 789 Serenity Avenue, Wellness City, NY
+                Address: Ashfaq Neuropsychiatric and General Hospital Kotanai
+                Khwaza Khela, Khwaza Khela
               </motion.p>
-              <motion.p 
+              <motion.p
                 variants={itemVariants}
                 className="text-[var(--gray-text)] mb-2"
               >
-                Phone: +1 800 123 4567
+                Phone: +92 946 744760
               </motion.p>
-              <motion.p 
+              <motion.p
                 variants={itemVariants}
                 className="text-[var(--gray-text)]"
               >
                 Email: support@mindcareclinic.com
               </motion.p>
             </motion.div>
-            <motion.form 
-              variants={fadeInRight}
-              className="space-y-4"
-            >
+            <motion.form variants={fadeInRight} className="space-y-4">
               <motion.div variants={itemVariants}>
                 <InputField
                   type="text"
@@ -361,7 +318,7 @@ const LandingPage = () => {
                   className="w-full p-2 border placeholder:text-[var(--white-text)] text-[var(--white-text)] border-[var(--white-text)] outline-0 rounded h-32"
                 ></textarea>
               </motion.div>
-              <motion.div 
+              <motion.div
                 variants={itemVariants}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -389,7 +346,7 @@ const LandingPage = () => {
       </motion.a>
 
       {/* Footer */}
-      <motion.footer 
+      <motion.footer
         className="bg-[var(--dark-blue)] text-[var(--white-text)] text-center py-8"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}

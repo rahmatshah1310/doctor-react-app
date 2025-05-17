@@ -1,4 +1,7 @@
 import Profile from "@assets/images/Profile.png";
+import Patient from "@assets/images/Patient.jpg";
+import Brain from "@assets/images/Brain.jpg";
+import Beds from "@assets/images/Beds.jpg";
 
 export const services = [
   {
@@ -27,7 +30,6 @@ export const services = [
   },
 ];
 
-
 export const BookingContent = [
   {
     title: "ECG (Electrocardiogram)",
@@ -46,62 +48,65 @@ export const BookingContent = [
   },
 ];
 
-
-
-
 // Add this constant for form fields
 export const AppointmentFields = [
   {
     name: "fullName",
     label: "YOUR FULL NAME",
     type: "text",
-    placeholder: "Your Full Name"
+    placeholder: "Your Full Name",
   },
   {
     name: "email",
     label: "EMAIL ADDRESS",
     type: "email",
-    placeholder: "Email"
+    placeholder: "Email",
   },
   {
     name: "phone",
     label: "PHONE NUMBER",
     type: "text",
-    placeholder: "Your Phone Number"
+    placeholder: "Your Phone Number",
   },
   {
     name: "appointmentDate",
     label: "APPOINTMENT DATE",
     type: "text",
-    placeholder: "Appointment Date"
+    placeholder: "Appointment Date",
   },
   {
     name: "appointmentTime",
     label: "APPOINTMENT TIME",
     type: "text",
-    placeholder: "Appointment Time"
-  }
+    placeholder: "Appointment Time",
+  },
 ];
 
 // Add this constant for slides
+// export const HomeSlides = [
+//   {
+//     id: 1,
+//     title: "YOUR MENTAL WELLNESS IS OUR PRIORITY",
+//     highlight: "PRIORITY",
+//     type: "title"
+//   },
+//   {
+//     id: 2,
+//     content: "Professional support for your mental health journey",
+//     type: "content"
+//   },
+//   {
+//     id: 3,
+//     title: "YOUR MENTAL WELLNESS IS OUR PRIORITY",
+//     highlight: "PRIORITY",
+//     type: "search"
+//   }
+// ];
+
 export const HomeSlides = [
-  {
-    id: 1,
-    title: "YOUR MENTAL WELLNESS IS OUR PRIORITY",
-    highlight: "PRIORITY",
-    type: "title"
-  },
-  {
-    id: 2,
-    content: "Professional support for your mental health journey",
-    type: "content"
-  },
-  {
-    id: 3,
-    title: "YOUR MENTAL WELLNESS IS OUR PRIORITY",
-    highlight: "PRIORITY",
-    type: "search"
-  }
+  { id: 1, backgroundImage: Patient },
+  { id: 2, backgroundImage: Brain },
+  { id: 3, backgroundImage: Beds },
 ];
 
 export const serviceOptions = [
