@@ -90,13 +90,15 @@ const Navbar = () => {
             </a>
             <a
               href="#events"
-              className="text-[var(--white-text)] hover:text-[var(--gray-text)] transition-colors duration-300"
+              className="hover:text-[var(--primary-color)] text-lg font-semibold"
+              onClick={() => setMenuOpen(false)}
             >
               Events
             </a>
             <a
               href="#news"
-              className="text-[var(--white-text)] hover:text-[var(--gray-text)] transition-colors duration-300"
+              className="hover:text-[var(--primary-color)] text-lg font-semibold"
+              onClick={() => setMenuOpen(false)}
             >
               News
             </a>
