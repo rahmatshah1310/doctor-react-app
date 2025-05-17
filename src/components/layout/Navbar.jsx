@@ -49,13 +49,7 @@ const Navbar = () => {
             href="#events"
             className="text-[var(--white-text)] hover:text-[var(--gray-text)] transition-colors duration-300"
           >
-            Events
-          </a>
-          <a
-            href="#news"
-            className="text-[var(--white-text)] hover:text-[var(--gray-text)] transition-colors duration-300"
-          >
-            News
+            Events And News
           </a>
         </div>
         <button
@@ -93,14 +87,7 @@ const Navbar = () => {
               className="hover:text-[var(--primary-color)] text-lg font-semibold"
               onClick={() => setMenuOpen(false)}
             >
-              Events
-            </a>
-            <a
-              href="#news"
-              className="hover:text-[var(--primary-color)] text-lg font-semibold"
-              onClick={() => setMenuOpen(false)}
-            >
-              News
+              Events And News
             </a>
           </div>
         )}

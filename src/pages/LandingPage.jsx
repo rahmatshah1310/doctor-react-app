@@ -347,7 +347,7 @@ const LandingPage = () => {
 
       {/* Footer */}
       <motion.footer
-        className="bg-[var(--dark-blue)] text-[var(--white-text)] text-center py-8"
+        className="bg-[var(--light-green)] text-[var(--white-text)] text-center py-8"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
