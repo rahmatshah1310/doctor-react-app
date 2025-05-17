@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Logo from "@assets/images/logo.jpg";
+import MainLogo from "@assets/images/MainLogo.jpg";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
@@ -12,7 +13,7 @@ const Navbar = () => {
         <div className="text-[var(--primary-color)]">
           <Link to="/">
             <img
-              src={Logo}
+              src={MainLogo}
               alt="logo"
               className="w-30 left-10 h-20 md:w-44 md:h-24 sm:w-12 sm:h-12 object-cover  fixed top-0 md:left-18 z-50"
             />
