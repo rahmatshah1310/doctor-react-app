@@ -15,7 +15,7 @@ const Navbar = () => {
             <img
               src={MainLogo}
               alt="logo"
-              className="w-30 left-10 h-20 md:w-44 md:h-24 sm:w-12 sm:h-12 object-cover  fixed top-0 md:left-18 z-50"
+              className="w-30 left-10 h-20 md:w-44 md:h-35 sm:w-12 sm:h-12 object-cover  fixed top-0 md:left-18 z-50"
             />
           </Link>
         </div>
@@ -24,7 +24,7 @@ const Navbar = () => {
             href="#home"
             className="text-[var(--white-text)] hover:text-[var(--gray-text)]  transition-colors duration-300"
           >
-            Home
+            Home                                                                                                                       
           </a>
           <a
             href="#services"
