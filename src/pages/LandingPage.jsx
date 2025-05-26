@@ -10,7 +10,6 @@ import {
 import Navbar from "@components/layout/Navbar";
 import TopNavbar from "@components/layout/TopNavbar";
 import Profile from "@assets/images/Profile.png";
-import { services } from "@constants/constant";
 import InputField from "@components/commons/InputField";
 import Button from "@components/commons/Button";
 import AntdSelect from "@components/commons/AntdSelect";
