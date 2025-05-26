@@ -9,4 +9,5 @@ export const ICONS = {
   whatsappIcon: <SiWhatsapp className="text-[var(--white-text)]" size={28} />,
   googleIcon:<FaGoogle/>,
   instagramIcon:<FaInstagram size={16}/>
+  
 };
