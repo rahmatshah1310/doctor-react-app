@@ -4,6 +4,7 @@ import Button from "@components/commons/Button";
 import { Link } from "react-router-dom";
 
 export default function Login() {
+
   return (
     <div className="flex items-center justify-center min-h-screen px-4">
       <div className="w-full sm:w-3/4 md:w-2/3 lg:w-2/5 font-roboto xl:w-1/4 p-6 sm:p-8 border-[var(--light-green)] border rounded-2xl space-y-4 shadow-md bg-white">
