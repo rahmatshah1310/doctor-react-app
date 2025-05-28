@@ -177,7 +177,7 @@ const LandingPage = () => {
                   variants={itemVariants}
                   className="mb-8 text-[var(--black-text)] font-medium text-2xl sm:text-3xl md:text-4xl "
                 >
-                  What We Offer
+                  What We Offer?
                 </motion.h4>
 
                 <motion.div variants={staggerContainer}>
